@@ -5,15 +5,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.FrameLayout
-import android.widget.ScrollView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import android.util.Base64
 import android.widget.*
 import android.graphics.BitmapFactory
-import androidx.appcompat.app.AppCompatDelegate
-import androidx.appcompat.widget.SwitchCompat
 import com.bumptech.glide.Glide
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -22,7 +18,6 @@ import com.google.firebase.database.ValueEventListener
 import com.ifpr.androidapptemplate.baseclasses.Item
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.ifpr.androidapptemplate.ui.ai.AiLogicActivity
-import com.ifpr.androidapptemplate.ui.ai.AiLogicFragment
 import com.ifpr.androidapptemplate.R
 import com.ifpr.androidapptemplate.databinding.FragmentHomeBinding
 
@@ -76,8 +71,15 @@ class HomeFragment : Fragment() {
 
                         val imageView = itemView.findViewById<ImageView>(R.id.item_image)
                         val enderecoView = itemView.findViewById<TextView>(R.id.item_endereco)
+                        val numeroView = itemView.findViewById<TextView>(R.id.item_numero)
+                        val bairroView = itemView.findViewById<TextView>(R.id.item_bairro)
+                        val cepView = itemView.findViewById<TextView>(R.id.item_cep)
 
-                        enderecoView.text = "Endereço: ${item.endereco ?: "Não informado"}"
+                        enderecoView.text = "Rua: ${item.endereco ?: "Não informado"}"
+                        numeroView.text = "Numero: ${item.numero ?: "Não informado"}"
+                        bairroView.text = "Bairro: ${item.bairro ?: "Não informado"}"
+                        cepView.text = "CEP: ${item.cep ?: "Não informado"}"
+
 
                         if (!item.imageUrl.isNullOrEmpty()) {
                             Glide.with(container.context).load(item.imageUrl).into(imageView)

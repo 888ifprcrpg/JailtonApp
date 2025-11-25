@@ -19,18 +19,69 @@
             android:layout_marginEnd="8dp" />
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/item_endereco"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Endereço:"
+                android:text="Rua:"
                 android:textSize="16sp"
                 android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/item_numero"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Numero:"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Campos futuros aqui -->
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/item_bairro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bairro:"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <!-- Campos futuros aqui -->
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/item_cep"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cep:"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Campos futuros aqui -->
+            </LinearLayout>
 
             <!-- Campos futuros aqui -->
         </LinearLayout>
